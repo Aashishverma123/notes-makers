@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <div class="main w-full h-screen bg-zinc-600 p-10 ">
+        <div class="flex flex-wrap gap-10">
+             <% user.forEach(function(users){ %>
+                    <div class="py-4 px-5 bg-zinc-100 text-black rounded-md w-fit">
+                        <h1 class="text-2xl font-medium traking-tighter" >Name: <%=users.name %></h1>
+                         <h1 class="text-xl traking-tigher">username: <%=users.username %></h1>
+                         <h1 class=" traking-tigher">email:<%=users.email %> </h1>
+                         <h1 class=" traking-tigher">password: <%=users.password %></h1>
+    
+                         <div class="mt-3 flex items-center justify-between">
+                            <a class="text-xs font-bold opacity-40" href="/delete/<%= users._id %>">Delete></a>
+                            <a class="text-xs font-bold " href="/edit/<%= users._id %>">edit</a>
+                         </div>
+                  </div>     
+                  <% }) %>
+                </div>
+           
+    </div>
+</body>
+</html>
